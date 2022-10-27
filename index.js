@@ -3,8 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 // TODO: Create an array of questions for user input
-inquirer 
-    .prompt([
+const questions = [
     {
         type: 'input',
         message: 'What is the title of your Project?',
@@ -51,52 +50,55 @@ inquirer
         message: 'What is your email address?',
         name: 'email',
     },
-])
+]
+
+
+inquirer.prompt(questions)
 .then((answers) => {
     const md = `
-    # ${answers.title}
+# ${answers.title}
 
-    ## Description
+## Description
 
-    ${answers.description}
+${answers.description}
 
-    ## Table of Contents
+## Table of Contents
 
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [License](#license)
-    - [Contributing](#contributing)
-    - [Tests](#tests)
-    - [Questions](#questions)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
 
-    ## Installation
+## Installation
 
-    ${answers.installation}
+${answers.installation}
 
-    ## Usage
+## Usage
 
-    ${answers.installation}
+${answers.installation}
 
-    ## License
+## License
 
-    ${answers.license}
+${answers.license}
 
-    ## Contributing
+## Contributing
 
-    ${answers.contributing}
+${answers.contributing}
 
-    ## Tests
+## Tests
 
-    ${answers.tests}
+${answers.tests}
 
-    ## Questions
+## Questions
 
-    ${answers.github}:
-    https://github.com/${answers.github}/
+${answers.github}:
+https://github.com/${answers.github}/
     
-    If you have additional questions, please reach out to me at ${answers.email}
+If you have additional questions, please reach out to me at ${answers.email}
     
-    `
+`
 
 // TODO: Create a function to write README file
 fs.writeFile('README.md', md, (err) =>
@@ -104,8 +106,4 @@ fs.writeFile('README.md', md, (err) =>
 );
 });
 
-// TODO: Create a function to initialize app
-function init() {}
 
-// Function call to initialize app
-init();
