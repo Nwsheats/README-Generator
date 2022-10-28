@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./generateMarkdown');
 
 
 // TODO: Create an array of questions for user input
@@ -53,95 +54,17 @@ const questions = [
     },
 ]
 
+function start() {
+    inquirer.prompt(questions)
+    .then((answers) => {
+        fs.writeFile('README.md', generateMarkdown({...answers}), (err) =>
+        err ? console.error(err) : console.log('Success!')
+      );
+    });
+}
 
-inquirer.prompt(questions)
-.then((answers) => {
-    const md = `
-# ${answers.title}
-
-
-![Badge](https://img.shields.io/badge/LICENSE-${answers.license}-pink?style=for-the-badge&logo=github)
-
-
-## Description
-
-${answers.description}
+start();
 
 
---
-
-
-## Table of Contents
-
-- [Description](#description)
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [Contributing](#contributing)
-- [Tests](#tests)
-- [Questions](#questions)
-
-
---
-
-
-## Installation
-
-${answers.installation}
-
-
---
-
-
-## Usage
-
-${answers.installation}
-
-
---
-
-
-## License
-
-This application is utilizing the following License: ${answers.license}
-
-
-
---
-
-
-## Contributing
-
-${answers.contributing}
-
-
---
-
-
-## Tests
-
-${answers.tests}
-
-
---
-
-
-## Questions
-
-
-GitHub Repository Link: https://github.com/${answers.github}/
-
-If you have additional questions, please reach out to me at ${answers.email}
-
---
-
-
-`
-
-// TODO: Create a function to write README file
-fs.writeFile('README.md', md, (err) =>
-  err ? console.error(err) : console.log('Success!')
-);
-});
 
 
