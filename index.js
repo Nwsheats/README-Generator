@@ -2,6 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -25,10 +26,10 @@ const questions = [
         name: 'usage',
     },
     {
-        type: 'checkbox',
+        type: 'list',
         message: 'What license are you using?',
         name: 'license',
-        choices: ['MIT', 'Apache', 'GPL'],
+        choices: ['MIT', 'APACHE', 'GPL', 'None'],
     },
     {
         type: 'input',
@@ -58,12 +59,21 @@ inquirer.prompt(questions)
     const md = `
 # ${answers.title}
 
+
+![Badge](https://img.shields.io/badge/LICENSE-${answers.license}-pink?style=for-the-badge&logo=github)
+
+
 ## Description
 
 ${answers.description}
 
+
+--
+
+
 ## Table of Contents
 
+- [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
@@ -71,33 +81,61 @@ ${answers.description}
 - [Tests](#tests)
 - [Questions](#questions)
 
+
+--
+
+
 ## Installation
 
 ${answers.installation}
+
+
+--
+
 
 ## Usage
 
 ${answers.installation}
 
+
+--
+
+
 ## License
 
-${answers.license}
+This application is utilizing the following License: ${answers.license}
+
+
+
+--
+
 
 ## Contributing
 
 ${answers.contributing}
 
+
+--
+
+
 ## Tests
 
 ${answers.tests}
 
+
+--
+
+
 ## Questions
 
-${answers.github}:
-https://github.com/${answers.github}/
-    
+
+GitHub Repository Link: https://github.com/${answers.github}/
+
 If you have additional questions, please reach out to me at ${answers.email}
-    
+
+--
+
+
 `
 
 // TODO: Create a function to write README file
