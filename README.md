@@ -1,18 +1,18 @@
 
-# Test Project
+# README Generator
   
   
-![Badge](https://img.shields.io/badge/LICENSE-MIT-pink?style=for-the-badge&logo=github)
+![Badge](https://img.shields.io/badge/LICENSE-None-pink?style=for-the-badge&logo=github)
   
   
 ## Description
   
-It does stuff
+It takes inputs of information using Node.js to generate a professional-looking README with a functional Table of Contents, changing Badges based on which License is selected, and a link to the GitHub page of the username that was entered.
   
   
 --
   
-
+  
 ## Table of Contents
   
 - [Description](#description)
@@ -29,7 +29,7 @@ It does stuff
   
 ## Installation
   
-Just install it
+Currently not available for Install. Instructions coming soon.
   
   
 --
@@ -37,7 +37,7 @@ Just install it
   
 ## Usage
   
-Just install it
+Open your Terminal and use 'node index.js' to receive question prompts. Answer each prompt and use enter to advance to the next one. A custom README should be generated at the end of the process
   
   
 --
@@ -45,7 +45,7 @@ Just install it
   
 ## License
   
-This application is utilizing the following License: MIT
+This application is utilizing the following License: None
   
   
   
@@ -54,7 +54,7 @@ This application is utilizing the following License: MIT
   
 ## Contributing
   
-No contribution guidelines
+Currently not accepting contributions.
   
   
 --
@@ -62,7 +62,7 @@ No contribution guidelines
   
 ## Tests
   
-N/A
+Verify that string literals in generateMarkdown.js match the required fields for your type of README.
   
   
 --
