@@ -72,6 +72,8 @@ Verify that string literals in generateMarkdown.js match the required fields for
   
   
 GitHub Repository Link: https://github.com/nwsheats/
+
+Video Demonstration Link: https://www.youtube.com/watch?v=KLT_mMnrpwI
   
 If you have additional questions, please reach out to me at nwsheats@gmail.com
   
