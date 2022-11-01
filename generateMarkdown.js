@@ -40,7 +40,7 @@ ${answers.installation}
   
 ## Usage
   
-${answers.installation}
+${answers.usage}
   
   
 --
